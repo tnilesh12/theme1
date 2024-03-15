@@ -1,0 +1,201 @@
+{
+    "Block_Name": "App_Theme_Block",
+    "AppThemeBlockData": {
+        "id": 0,
+        "AppBackgroundColor": "#0D0646",
+        "PrimaryTextColor": "#E4D4D4",
+        "AppBarTitle": "Own App",
+        "AppLogo": "https://media.licdn.com/dms/image/C560BAQH5_bOybur6Ug/company-logo_200_200/0/1607316827355?e=2147483647&v=beta&t=42BgxtfE9kFKj4XjPV2kZRa9C17UVYYRNfHziGkkdpE",
+        "ShowBottomBarView": true,
+        "ShowDrawerView": true,
+        "CartIcon": "./assets/cartIcon.png",
+        "CartLinksTo": "",
+        "CartIconStyle": {
+            "Color": "#000000",
+            "AlignItems": "left",
+            "width": "20",
+            "Height": "20"
+        },
+        "MenuIcon": "./assets/cartIcon.png",
+        "MenuLinksTo": "",
+        "MenuIconStyle": {
+            "Color": "#000000",
+            "AlignItems": "left",
+            "width": "20",
+            "Height": "20"
+        },
+        "Heading_styleSheets": {
+            "width": "100%",
+            "color": "#000000",
+            "fontSize": "28",
+            "fontWeight": "bold",
+            "fontName": "Abc",
+            "fontStyle": "normal",
+            "border": "0",
+            "outline": "none",
+            "paddingLeft": "5",
+            "paddingRight": "5",
+            "paddingTop": "5",
+            "paddingBottom": "5",
+            "borderRadius": "0",
+            "backgroundColor": "#ffffff",
+            "alignItems": "left"
+        },
+        "DrawerBlockData": {
+            "id": 0,
+            "SelectedBackgroundColor": "#826DC2",
+            "UnSelectedBackgroundColor": "#DEC5C5",
+            "SelectedTextColor": "#000000",
+            "UnSelectedTextColor": "#282020",
+            "DrawerBarItems": [
+                {
+                    "Title": "Home",
+                    "Logo": "Home1",
+                    "LinksTo": "Home",
+                    "SubDrawerBarItems": [
+                        {
+                            "Title": "Favorite",
+                            "Logo": "Favorite1",
+                            "LinksTo": "Favorite"
+                        },
+                        {
+                            "Title": "Profile",
+                            "Logo": "Profile1",
+                            "LinksTo": "Profile"
+                        }
+                    ]
+                },
+                {
+                    "Title": "Search",
+                    "Logo": "Search1",
+                    "LinksTo": "Search"
+                },
+                {
+                    "Title": "Settings",
+                    "Logo": "Settings1",
+                    "LinksTo": "Settings",
+                    "SubDrawerBarItems": [
+                        {
+                            "Title": "Favorite",
+                            "Logo": "Favorite1",
+                            "LinksTo": "Favorite"
+                        },
+                        {
+                            "Title": "Profile",
+                            "Logo": "Profile1",
+                            "LinksTo": "Profile"
+                        }
+                    ]
+                },
+                {
+                    "Title": "Policies",
+                    "Logo": "Policies1",
+                    "LinksTo": "Policies"
+                },
+                {
+                    "Title": "Exit",
+                    "Logo": "Exit1",
+                    "LinksTo": "Exit"
+                }
+            ],
+            "Container_StyleSheets": {
+                "width": "100%",
+                "paddingLeft": "0",
+                "paddingRight": "0",
+                "paddingTop": "0",
+                "paddingBottom": "0",
+                "display": "flex",
+                "border": "solid",
+                "borderWidth": "1",
+                "borderColor": "#8f95b2",
+                "cursor": "pointer",
+                "borderRadius": "0",
+                "alignItems": "center",
+                "backgroundColor": "#ffffff"
+            },
+            "Heading_styleSheets": {
+                "width": "100%",
+                "color": "#000000",
+                "fontSize": "1",
+                "fontWeight": "bold",
+                "fontName": "Abc",
+                "fontStyle": "normal",
+                "border": "0",
+                "outline": "none",
+                "paddingLeft": "0",
+                "paddingRight": "0",
+                "paddingTop": "0",
+                "paddingBottom": "0",
+                "borderRadius": "0",
+                "backgroundColor": "#ffffff",
+                "alignItems": "left"
+            }
+        },
+        "BottomBarBlockData": {
+            "id": 0,
+            "SelectedColor": "#ffffff",
+            "UnSelectedColor": "#67667A",
+            "ShowBottomBarTextView": false,
+            "ShowBottomBarIcon": true,
+            "BottomBarItems": [
+                {
+                    "Title": "Home",
+                    "Logo": "Home1",
+                    "LinksTo": "/home_screen"
+                },
+                {
+                    "Title": "Product",
+                    "Logo": "Product1",
+                    "LinksTo": "/product_list_screen"
+                },
+                {
+                    "Title": "Profile",
+                    "Logo": "Profile1",
+                    "LinksTo": "Profile"
+                },
+                {
+                    "Title": "Cart",
+                    "Logo": "Cart1",
+                    "LinksTo": "/cart_screen"
+                },
+                {
+                    "Title": "More",
+                    "Logo": "More1",
+                    "LinksTo": "More"
+                }
+            ],
+            "Container_StyleSheets": {
+                "width": "100%",
+                "paddingLeft": "0",
+                "paddingRight": "0",
+                "paddingTop": "0",
+                "paddingBottom": "0",
+                "display": "flex",
+                "border": "solid",
+                "borderWidth": "1",
+                "borderColor": "#8f95b2",
+                "cursor": "pointer",
+                "borderRadius": "0",
+                "alignItems": "center",
+                "backgroundColor": "#050227"
+            },
+            "Heading_styleSheets": {
+                "width": "100%",
+                "color": "#000000",
+                "fontSize": "14",
+                "fontWeight": "bold",
+                "fontName": "Abc",
+                "fontStyle": "normal",
+                "border": "0",
+                "outline": "none",
+                "paddingLeft": "0",
+                "paddingRight": "0",
+                "paddingTop": "0",
+                "paddingBottom": "0",
+                "borderRadius": "0",
+                "backgroundColor": "#ffffff",
+                "alignItems": "left"
+            }
+        }
+    }
+}

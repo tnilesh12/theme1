@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "293710142649",
+    "project_id": "moblifytesting",
+    "storage_bucket": "moblifytesting.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:293710142649:android:b00e9374033c0bde0e0f68",
+        "android_client_info": {
+          "package_name": "com.example.theme1"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBnojBbhOj8q45AgIipsfDdncs8fOC4kRU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

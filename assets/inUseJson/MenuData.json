@@ -1,0 +1,101 @@
+[
+    {
+        "id": 0,
+        "name": "Home",
+        "Path": "/Home",
+        "Icon":"<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"feather feather-x\"><line x1=\"18\" y1=\"6\" x2=\"6\" y2=\"18\"></line><line x1=\"6\" y1=\"6\" x2=\"18\" y2=\"18\"></line></svg>",
+        "subMenu": [
+            {
+                "id": 0,
+                "name": "SubMenu",
+                "Path": "/subMenu",
+                "nestedSubMenu": [
+                    {
+                        "id": 0,
+                        "name": "NestedSubMenu",
+                        "Path": "/Dresses"
+                    },
+                    {
+                        "id": 1,
+                        "name": "NestedSubMenu2",
+                        "Path": "/Dresses"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 1,
+        "name": "Category",
+        "Icon":"<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"44\" height=\"44\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"feather feather-shopping-cart\"><circle cx=\"9\" cy=\"21\" r=\"1\"/><circle cx=\"20\" cy=\"21\" r=\"1\"/><path d=\"M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6\"/></svg>",
+        "Path": "/Category",
+        "subMenu": [
+            {
+                "id": 0,
+                "name": "SubMenu",
+                "Path": "/subMenu",
+                "nestedSubMenu": [
+                    {
+                        "id": 0,
+                        "name": "NestedSubMenu",
+                        "Path": "/Dresses"
+                    }
+                ]
+            },
+            {
+                "id": 0,
+                "name": "SubMenu2",
+                "Path": "/subMenu",
+                "nestedSubMenu": [
+                    {
+                        "id": 0,
+                        "name": "NestedSubMenu",
+                        "Path": "/Dresses"
+                    },
+                    {
+                        "id": 0,
+                        "name": "NestedSubMenu",
+                        "Path": "/Dresses"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "name": "All products",
+        "Icon":"<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"feather feather-x\"><line x1=\"18\" y1=\"6\" x2=\"6\" y2=\"18\"></line><line x1=\"6\" y1=\"6\" x2=\"18\" y2=\"18\"></line></svg>",
+        "Path": "/All_products"
+    },
+    {
+        "id": 3,
+        "name": "Accessories",
+        "Icon":"<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"feather feather-x\"><line x1=\"18\" y1=\"6\" x2=\"6\" y2=\"18\"></line><line x1=\"6\" y1=\"6\" x2=\"18\" y2=\"18\"></line></svg>",
+        "Path": "/Accessories",
+        "subMenu": [
+            {
+                "id": 0,
+                "name": "Dresses",
+                "Path": "/Dresses",
+                "nestedSubMenu": [
+                    {
+                        "id": 0,
+                        "name": "Dresses",
+                        "Path": "/Dresses"
+                    },
+                    {
+                        "id": 1,
+                        "name": "Best Selling",
+                        "Path": "/Best_Selling"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 12,
+        "name": "Spring Dresses",
+        "Icon":"<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"feather feather-x\"><line x1=\"18\" y1=\"6\" x2=\"6\" y2=\"18\"></line><line x1=\"6\" y1=\"6\" x2=\"18\" y2=\"18\"></line></svg>",
+        "Path": "/Spring_Dresses"
+    }
+]

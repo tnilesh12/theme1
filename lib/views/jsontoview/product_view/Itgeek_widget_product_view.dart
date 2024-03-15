@@ -1,0 +1,131 @@
+
+// import 'package:flutter/material.dart';
+// import 'package:flutter/services.dart';
+
+// import '../../helper/util.dart';
+// import '../../modelClass/data_model.dart';
+
+// class ItgeekWidgetPopulorProduct extends StatelessWidget {
+//   ProductData product;
+//   Function(ProductItems) OnClick;
+//   ItgeekWidgetPopulorProduct(this.product, this.OnClick);
+
+//   @override
+//   Widget build(BuildContext context) {
+//     Color containerBackgroundColor =
+//         Util.getColorFromHex(product.styleProperties!.backgroundColor!);
+
+//     return Container(
+//       color: containerBackgroundColor,
+//       child: Column(
+//         crossAxisAlignment: CrossAxisAlignment.start,
+//         children: [
+//           Container(
+//             margin: const EdgeInsets.fromLTRB(15, 10, 15, 0),
+//             child: Row(
+//               mainAxisAlignment: MainAxisAlignment.spaceBetween,
+//               children: [
+//                 Text(
+//                   "Products",
+//                   style: TextStyle(
+//                               fontFamily: 'Cinzel',fontSize: 20, color: Colors.brown.shade900),
+//                 ),
+//                 product.productAllVisible!
+//                     ? Text(
+//                         "View All",
+//                         style: TextStyle(
+//                               fontFamily: 'Cinzel',
+//                             fontSize: 14, color: Colors.brown.shade900),
+//                       )
+//                     : Text(""),
+//               ],
+//             ),
+//           ),
+//           PopulorProductView(product, OnClick),
+//         ],
+//       ),
+//     );
+//   }
+// }
+
+// class PopulorProductView extends StatelessWidget {
+//   Function(ProductItems) OnClick;
+//   ProductData product;
+//   PopulorProductView(this.product, this.OnClick);
+
+//   @override
+//   Widget build(BuildContext context) {
+//     List<ProductItems> listItems = [];
+//     product.productItems!.map((item) => {listItems.add(item)}).toList();
+
+//     Color imageBackgroundColor =
+//         Util.getColorFromHex(product.styleProperties!.backgroundColor!);
+//     Color textColor = Util.getColorFromHex(product.styleProperties!.titleTextColor!);
+//     Color viewBackgroundColor =
+//         Util.getColorFromHex(product.productViewBackgroundColor!);
+
+//     return Container(
+//         padding: EdgeInsets.fromLTRB(12, 0, 0, 12),
+//         height: 215,
+//         child: ListView.builder(
+//             physics: ClampingScrollPhysics(),
+//             shrinkWrap: true,
+//             scrollDirection: Axis.horizontal,
+//             itemCount: product.productItems!.length,
+//             itemBuilder: (BuildContext context, int index) {
+//               return InkWell(
+//                 onTap: () {OnClick(listItems[index]);},
+//                 child: Container(
+//                   width: 130,
+//                   decoration: BoxDecoration(
+//                       color: viewBackgroundColor,
+//                       borderRadius:
+//                           BorderRadius.circular(product.styleProperties!.radius!),
+//                       border: Border.all(width: 1, color: Colors.blue)),
+//                   margin: EdgeInsets.all(5),
+//                   child: Padding(
+//                     padding: const EdgeInsets.all(5.0),
+//                     child: ClipRRect(
+//                         borderRadius:
+//                             BorderRadius.circular(product.styleProperties!.radius!),
+//                         child: Column(
+//                             crossAxisAlignment: CrossAxisAlignment.stretch,
+//                             children: [
+//                               Container(
+//                                 margin: EdgeInsets.all(2),
+//                                 height: 110,
+//                                 width: 120,
+//                                 decoration: BoxDecoration(
+//                                     color: imageBackgroundColor,
+//                                     image: DecorationImage(
+//                                         image: NetworkImage(
+//                                             listItems[index].productImageLink!),
+//                                         fit: BoxFit.fill)),
+//                               ),
+//                               Container(
+//                                 padding: EdgeInsets.fromLTRB(0, 5, 0, 0),
+//                                 alignment: Alignment.centerLeft,
+//                                 child: Text(
+//                                     "${listItems[index].productTitleText!}",
+//                                     maxLines: 2,
+//                                     style: TextStyle(
+//                               fontFamily: 'Cinzel',
+//                                         color: textColor,
+//                                         fontSize: product.styleProperties!.descriptionTextFontSize)),
+//                               ),
+//                               Container(
+//                                 padding: EdgeInsets.fromLTRB(0, 0, 5, 0),
+//                                 alignment: Alignment.centerLeft,
+//                                 child: Text("${listItems[index].productPrice!}",
+//                                     style: TextStyle(
+//                               fontFamily: 'Cinzel',
+//                                         color: textColor,
+//                                         fontSize: product.styleProperties!.descriptionTextFontSize)),
+//                               ),
+//                             ])),
+//                   ),
+//                 ),
+//               );
+//             }));
+//   }
+// }

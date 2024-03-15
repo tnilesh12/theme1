@@ -1,0 +1,43 @@
+{
+    "StyleData": {
+        "TypographySize": "14px",
+        "HeadingFont": "Cinzel ",
+        "BodyFont": "Cinzel",
+        "General": {
+            "AppBar_Color": "#292929",
+            "AppBar_Text_Color": "#ffffff",
+            "Text_color": "#000000",
+            "Background_Color": "#FFFFFF",
+            "Success_Color": "#45F85D",
+            "Error_Color": "#FC0B0B",
+            "Border_Color": "#380CD6"
+        },
+        "Side_Navigation": {
+            "Selected_Text_Color": "#F8F8F8",
+            "UnSelected_Text_Color": "#1E1F1D",
+            "Selected_Background_Color": "#292929",
+            "UnSelected_Background_Color": "#ffffff",
+            "Menu_Background_color": "#ffffff"
+        },
+        "Bottom_Navigation": {
+            "Selected_Text_Color": "#ffffff",
+            "UnSelected_Text_Color": "#CFCFDE",
+            "Selected_Background_Color": "#ffffff",
+            "UnSelected_Background_Color": "#292929",
+            "Bottom_Nav_Background_Color": "#292929"
+        },
+        "Primary_Button": {
+            "Background": "#292929",
+            "Text": "#ffffff"
+        },
+        "Secondary_Button": {
+            "Background": "#292929",
+            "Text": "#ffffff"
+        },
+        "Edit_Text": {
+            "Background": "#F1EFEF",
+            "Placeholder_color": "#292929",
+            "Controller_Text_color": "#292929"
+        }
+    }
+}

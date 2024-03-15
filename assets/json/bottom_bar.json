@@ -1,0 +1,69 @@
+{
+    "Block_Name": "Bottom_Bar_Block",
+    "BottomBarBlockData": {
+        "id": 0,
+        "SelectedColor": "#ffffff",
+        "UnSelectedColor": "#4AAAD7",
+        "ShowBottomBarTextView": true,
+        "ShowBottomBarIcon": false,
+        "BottomBarItems": [
+            {
+                "Title": "Home",
+                "Logo": "Home1",
+                "LinksTo": "Home"
+            },
+            {
+                "Title": "Search",
+                "Logo": "Search1",
+                "LinksTo": "Search"
+            },
+            {
+                "Title": "Profile",
+                "Logo": "Profile1",
+                "LinksTo": "Profile"
+            },
+            {
+                "Title": "Cart",
+                "Logo": "Cart1",
+                "LinksTo": "Cart"
+            },
+            {
+                "Title": "More",
+                "Logo": "More1",
+                "LinksTo": "More"
+            }
+        ],
+        "Container_StyleSheets": {
+            "width": "100%",
+            "paddingLeft": "0",
+            "paddingRight": "0",
+            "paddingTop": "0",
+            "paddingBottom": "0",
+            "display": "flex",
+            "border": "solid",
+            "borderWidth": "1",
+            "borderColor": "#8f95b2",
+            "cursor": "pointer",
+            "borderRadius": "0",
+            "alignItems": "center",
+            "backgroundColor": "#000000"
+        },
+        "Heading_styleSheets": {
+            "width": "100%",
+            "color": "#000000",
+            "fontSize": "14",
+            "fontWeight": "bold",
+            "fontName": "Abc",
+            "fontStyle": "normal",
+            "border": "0",
+            "outline": "none",
+            "paddingLeft": "0",
+            "paddingRight": "0",
+            "paddingTop": "0",
+            "paddingBottom": "0",
+            "borderRadius": "0",
+            "backgroundColor": "#ffffff",
+            "alignItems": "left"
+        }
+    }
+}

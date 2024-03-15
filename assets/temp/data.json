@@ -1,0 +1,123 @@
+[
+    {
+        "Block_Name": "Nav_Bar",
+        "NavBarData": {
+            "id": 0,
+            "NavItems": [
+                {
+                    "Title": "HOME",
+                    "SVG": "svg"
+                }
+            ],
+            "logo": "https://i.im.ge/2024/01/16/Yr0TDm.logo-1-removebg-preview-1.png",
+            "Container_styleSheets": {
+                "width": "100%",
+                "color": "#000000",
+                "fontSize": "16",
+                "border": "none",
+                "outline": "none",
+                "paddingLeft": "0",
+                "paddingRight": "0",
+                "paddingTop": "0",
+                "paddingBottom": "0",
+                "margin": 0,
+                "borderRadius": "5",
+                "backgroundColor": "#00FFFFFF",
+                "textAlign": "left",
+                "alignment": "",
+                "background_Image": ""
+            }
+        }
+    },
+    {
+        "Block_Name": "Search_Block",
+        "SearchBlockData": {
+            "id": 1,
+            "Block_Name": "",
+            "placeholder": "Search here",
+            "title": "",
+            "label": "",
+            "icon": "./assets/searchIcon.png",
+            "linksTo": "",
+            "iconStyle": {
+                "color": "#000000",
+                "alignItems": "left",
+                "width": "20",
+                "height": "20"
+            },
+            "Container_styleSheets": {
+                "color": "#000000",
+                "fontSize": "16",
+                "border": "none",
+                "outline": "none",
+                "paddingLeft": "0",
+                "paddingRight": "0",
+                "paddingTop": "0",
+                "paddingBottom": "0",
+                "borderRadius": "5",
+                "width": "100%",
+                "backgroundColor": "#00FFFFFF",
+                "alignItems": "left",
+                "alignmwnt": ""
+            }
+        }
+    },
+    {
+        "Block_Name": "Text_Block",
+        "TextBlockData": {
+            "id": 2,
+            "Heading": "Title",
+            "discription": "discription here",
+            "linksTo": "",
+            "Container_StyleSheets": {
+                "width": "100%",
+                "paddingLeft": "0",
+                "paddingRight": "0",
+                "paddingTop": "0",
+                "paddingBottom": "0",
+                "display": "flex",
+                "border": "solid",
+                "borderWidth": "1",
+                "borderColor": "#8f95b2",
+                "cursor": "pointer",
+                "borderRadius": "0",
+                "alignItems": "center",
+                "backgroundColor": "#ffffff"
+            },
+            "Heading_styleSheets": {
+                "width": "100%",
+                "color": "#000000",
+                "fontSize": "1",
+                "fontWeight": "bold",
+                "fontName": "Abc",
+                "fontStyle": "normal",
+                "border": "0",
+                "outline": "none",
+                "paddingLeft": "0",
+                "paddingRight": "0",
+                "paddingTop": "0",
+                "paddingBottom": "0",
+                "borderRadius": "0",
+                "backgroundColor": "#ffffff",
+                "alignItems": "left"
+            },
+            "Description_StyleSheets": {
+                "width": "100%",
+                "color": "#000000",
+                "fontSize": ".8",
+                "fontWeight": "bold",
+                "fontName": "Abc",
+                "fontStyle": "normal",
+                "border": "0",
+                "outline": "none",
+                "paddingLeft": "0",
+                "paddingRight": "0",
+                "paddingTop": "0",
+                "paddingBottom": "0",
+                "borderRadius": "0",
+                "backgroundColor": "#ffffff",
+                "alignItems": "left"
+            }
+        }
+    }
+]

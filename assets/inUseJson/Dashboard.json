@@ -1,0 +1,292 @@
+{
+    "BuilderJsonTheme1": [
+        {
+            "Block_Id": "header1",
+            "Block_Name": "Header_Block",
+            "HeaderData": {
+                "StoreLogoSrc": "https://framerusercontent.com/images/ZtNJM6UJgu0YPxCAQKIZMBGn7lo.png?scale-down-to=200",
+                "LogoWidth": 80,
+                "WishlistIconSrc": "<svg xmlns='http://www.w3.org/2000/svg' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' strokeWidth='1' strokeLinecap='round' strokeLinejoin='round' className='feather feather-heart'><path d='M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z'></path></svg>",
+                "UserIconSrc": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"feather feather-x\"><line x1=\"18\" y1=\"6\" x2=\"6\" y2=\"18\"></line><line x1=\"6\" y1=\"6\" x2=\"18\" y2=\"18\"></line></svg>",
+                "CartIconSrc": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"feather feather-x\"><line x1=\"18\" y1=\"6\" x2=\"6\" y2=\"18\"></line><line x1=\"6\" y1=\"6\" x2=\"18\" y2=\"18\"></line></svg>",
+                "SearchIconSrc": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"feather feather-x\"><line x1=\"18\" y1=\"6\" x2=\"6\" y2=\"18\"></line><line x1=\"6\" y1=\"6\" x2=\"18\" y2=\"18\"></line></svg>",
+                "MenuIconSrc": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"feather feather-x\"><line x1=\"18\" y1=\"6\" x2=\"6\" y2=\"18\"></line><line x1=\"6\" y1=\"6\" x2=\"18\" y2=\"18\"></line></svg>"
+            },
+            "BottomNavigationEnable": false,
+            "BottomNavigationData": [
+                {
+                    "Title": "Home",
+                    "IconSrc": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"feather feather-x\"><line x1=\"18\" y1=\"6\" x2=\"6\" y2=\"18\"></line><line x1=\"6\" y1=\"6\" x2=\"18\" y2=\"18\"></line></svg>",
+                    "Action": "",
+                    "id": "null",
+                    "productTitle": ""
+                },
+                {
+                    "Title": "Categories",
+                    "IconSrc": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"feather feather-x\"><line x1=\"18\" y1=\"6\" x2=\"6\" y2=\"18\"></line><line x1=\"6\" y1=\"6\" x2=\"18\" y2=\"18\"></line></svg>",
+                    "Action": "",
+                    "id": "null",
+                    "productTitle": ""
+                },
+                {
+                    "Title": "New",
+                    "IconSrc": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"feather feather-x\"><line x1=\"18\" y1=\"6\" x2=\"6\" y2=\"18\"></line><line x1=\"6\" y1=\"6\" x2=\"18\" y2=\"18\"></line></svg>",
+                    "Action": "",
+                    "id": "null",
+                    "productTitle": ""
+                },
+                {
+                    "Title": "Brand",
+                    "IconSrc": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"feather feather-x\"><line x1=\"18\" y1=\"6\" x2=\"6\" y2=\"18\"></line><line x1=\"6\" y1=\"6\" x2=\"18\" y2=\"18\"></line></svg>",
+                    "Action": "",
+                    "id": "null",
+                    "productTitle": ""
+                },
+                {
+                    "Title": "More",
+                    "IconSrc": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"feather feather-x\"><line x1=\"18\" y1=\"6\" x2=\"6\" y2=\"18\"></line><line x1=\"6\" y1=\"6\" x2=\"18\" y2=\"18\"></line></svg>",
+                    "Action": "",
+                    "id": "null",
+                    "productTitle": ""
+                }
+            ]
+        },
+        {
+            "Block_Name": "Image_Banner_Slider_Block",
+            "ImageBannerSliderData": {
+                "SlideHeight": "Medium",
+                "AutoSwitchSlides": "true",
+                "ChangeSlidesEvery": 5,
+                "ImageBanner": [
+                    {
+                        "ImageSrc": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                        "Subheading": "Mobilify",
+                        "Heading": "It Geeks Presents",
+                        "Primarybuttonlabel": "Join Us",
+                        "Primarybuttonlink": "",
+                        "Secondarybuttonlabel": "Know More",
+                        "Secondarybuttonlink": "",
+                        "productTitlePrimary":"",
+                        "productTitleSecondary":"",
+                        "PrimarybtnId":"",
+                        "SecondarybtnId":""
+                    },
+                    {
+                        "ImageSrc": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                        "Subheading": "",
+                        "Heading": "",
+                        "Primarybuttonlabel": "",
+                        "Primarybuttonlink": "",
+                        "Secondarybuttonlabel": "",
+                        "Secondarybuttonlink": "",
+                        "productTitlePrimary":"",
+                        "productTitleSecondary":"",
+                        "PrimarybtnId":"",
+                        "SecondarybtnId":""
+                    },
+                    {
+                        "ImageSrc": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                        "Subheading": "",
+                        "Heading": "",
+                        "Primarybuttonlabel": "Join Us",
+                        "Primarybuttonlink": "",
+                        "Secondarybuttonlabel": "Know More",
+                        "Secondarybuttonlink": "",
+                        "productTitlePrimary":"",
+                        "productTitleSecondary":"",
+                        "PrimarybtnId":"",
+                        "SecondarybtnId":""
+
+                    },
+                    {
+                        "ImageSrc": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                        "Subheading": "Mobilify",
+                        "Heading": "",
+                        "Primarybuttonlabel": "Join Us",
+                        "Primarybuttonlink": "",
+                        "Secondarybuttonlabel": "Know More",
+                        "Secondarybuttonlink": "",
+                        "productTitlePrimary":"",
+                        "productTitleSecondary":"",
+                        "PrimarybtnId":"",
+                        "SecondarybtnId":""
+
+                    }
+                ]
+            }
+        },
+        {
+            "Block_Name": "Scrolling_Text_Block",
+            "ScrollingTextData": {
+                "ScrollingSpeed": 10,
+                "ScrollingList": [
+                    {
+                        "Text": "🚚 Free Shipping On All Orders Over $100",
+                        "Action": "Homepage1",
+                        "id": "null",
+                        "productTitle": ""
+                    },
+                    {
+                        "Text": "🚚 Free Shipping On All Orders Over $100",
+                        "Action": "Homepage2",
+                        "id": "null",
+                        "productTitle": ""
+                    }
+                ]
+            }
+        },
+        {
+            "Block_Name": "Collection_Grid_Block",
+            "CollectionGridData": {
+                "Heading": "Shop By Category",
+                "Enable_Slider": "false",
+                "Columns": 4,
+                "Rows": 1,
+                "CollectionList": [
+                    {
+                        "ImageSrc": "",
+                        "productTitle": "Title",
+                        "Action": "",
+                        "id": ""
+                    }
+                ]
+            }
+        },
+        {
+            "Block_Name": "Product_Grid_Block",
+            "ProductGridData": {
+                "Heading": "Our Product",
+                "Enable_Slider": "false",
+                "Columns": 2,
+                "Show": 0,
+                "view_all": false,
+                "Image_Ratio": "Portrait",
+                "ProductList": [
+                    {
+                        "ImageSrc": "",
+                        "productTitle": "Title",
+                        "Action": "",
+                        "id": "",
+                        "category": "CLEAN",
+                        "ratings": "5",
+                        "discountedPrice": "299",
+                        "price": "540"
+                    },
+                    {
+                        "ImageSrc": "",
+                        "productTitle": "Title",
+                        "Action": "",
+                        "id": "",
+                        "category": "CLEAN",
+                        "ratings": "5",
+                        "discountedPrice": "299",
+                        "price": "540"
+                    }
+                ]
+            }
+        },
+        {
+            "Block_Name": "Count_Down_Timer_Block"
+        },
+        {
+            "Block_Name": "Testimonials_Block",
+            "TestimonialsData": {
+                "TestimonialsList": [
+                    {
+                        "Quote": "High-quality products, great deals, prompt service. I like how you always stay in contact. I was kept abreast of each step of the process",
+                        "Author_designation": "Wellness Wonderland",
+                        "Author_name": "ANNA P"
+                    },
+                    {
+                        "Quote": "High-quality products, great deals, prompt service. I like how you always stay in contact. I was kept abreast of each step of the process",
+                        "Author_designation": "Wellness Wonderland",
+                        "Author_name": "ANNA P"
+                    }
+                ]
+            }
+        },
+        {
+            "Block_Name": "Image_Banner_Block",
+            "ImageWithTextData": {
+                "Image": "https://framerusercontent.com/images/iczVdMXqCSvdRUIoLp9AF8X72ZA.jpg?scale-down-to=512",
+                "Subheading": "About us",
+                "Heading": "Slide Heading",
+                "Description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever.",
+                "Button_label": "Read More...",
+                "productTitle": "",
+                "Action": "",
+                "id": ""
+            }
+        },
+        {
+            "Block_Name": "Divider_Block",
+            "Divider": {
+                "Space": 20
+            }
+        },
+        {
+            "Block_Name": "Instagram_Feed_Block"
+        },
+        {
+            "Block_Name": "Icon_Text_Block",
+            "IconTextData": {
+                "IconWithTextList": [
+                    {
+                        "Title": "Icon",
+                        "Column": "Select",
+                        "Click to upload Image": "",
+                        "Description": ""
+                    }
+                ]
+            }
+        },
+        {
+            "Block_Name": "Video_Block",
+            "VideoData": {
+                "Heading": "Title",
+                "URL": "",
+                "Cover_Image": "",
+                "Autoplay": false,
+                "VideoAltText": "Alt Text Here"
+            }
+        },
+        {
+            "Block_Name": "Search_Block",
+            "SearchData": {
+                "Heading": "Search Heading",
+                "Style": "Classic"
+            }
+        },
+        {
+            "Block_Name": "Comparison_Block",
+            "ComparisonData": {
+                "Heading": "Image Comparison ",
+                "Before_Image_src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsHkJ-wTJvTxAx7fCIqm91YQqEdeqAf2_RsKO_cit89SmnYOhMzlrWXQzN3rNwDb3ryM0&usqp=CAU",
+                "After_Image_src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsHkJ-wTJvTxAx7fCIqm91YQqEdeqAf2_RsKO_cit89SmnYOhMzlrWXQzN3rNwDb3ryM0&usqp=CAU",
+                "Image_height": "180px"
+            }
+        },
+        {
+            "Block_Name": "Discount_Section_Block",
+            "DiscountData": {
+                "DiscountList": [
+                    {
+                        "Title": "Title 1 @ $199 | 71% Off | $699",
+                        "ImageSrc": null,
+                        "Description": ""
+                    },
+                    {
+                        "Title": "Title 2 Cloth @ $199 | 71% Off | $699",
+                        "ImageSrc": null,
+                        "Description": ""
+                    },
+                    {
+                        "Title": "Title 3 Cloth @ $199 | 71% Off | $699",
+                        "ImageSrc": null,
+                        "Description": ""
+                    }
+                ]
+            }
+        }
+    ]
+}
