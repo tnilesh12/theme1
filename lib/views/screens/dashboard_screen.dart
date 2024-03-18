@@ -6,7 +6,7 @@ import 'package:theme1/modelClass/app_theme_model.dart';
 import 'package:theme1/test/test2.dart';
 import 'package:theme1/test/test_product_details.dart';
 import 'package:theme1/views/cart_screen/cart_screen.dart';
-import 'package:theme1/views/category/category_screen.dart';
+import 'package:theme1/views/category_tachnbark/category_screen.dart';
 import 'package:theme1/views/product_list/product_list_screen.dart';
 import 'package:theme1/views/screens/product_list_widgets.dart';
 import 'package:theme1/views/profile_screen/profile_screen.dart';
@@ -132,7 +132,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
   //       parent: _animationController, curve: Curves.fastOutSlowIn));
   //   super.initState();
   // }
-
+// /*
   Future<Map<String, String>> loadJson() async {
     final jsonDrawer =
         await rootBundle.loadString("assets/inUseJson/MenuData.json");
@@ -144,9 +144,11 @@ class _DashboardScreenState extends State<DashboardScreen> {
       'jsonBottomBar': jsonBottomBar,
     };
   }
+  // */
 
   @override
   Widget build(BuildContext context) {
+    // /*
     return FutureBuilder(
         future:
             loadJson(), // rootBundle.loadString("assets/json/MenuData.json"),
@@ -169,7 +171,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
             // print("my list is nnnnnnnnnnnnnnnnnnnn ${myList}");
 
             // return MainDrawer(appThemeModel.appThemeBlockData!,onTabChange: (tabItem) {print("tabItem$tabItem");});
-
+// */
             return SafeArea(
                 child: Scaffold(
               key: _scaffoldKey,
@@ -231,12 +233,14 @@ class _DashboardScreenState extends State<DashboardScreen> {
                   // HomePageScreenBody(appThemeModel: appThemeModel))
                   ),
             ));
+        //  /*
           } else if (snapshot.hasError) {
             return Text('Error loading JSON'); // Handle error
           } else {
             return CircularProgressIndicator(); // Show a loading indicator
           }
         });
+        // */
   }
 }
 
@@ -246,12 +250,14 @@ class HomePageScreenBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: MediaQuery.of(context).size.height,
-      child: Column(
-        children: [
-          CustomePageFromJson().GetWidget(context),
-        ],
+    return SingleChildScrollView(
+      child: Container(
+        // height: MediaQuery.of(context).size.height,
+        child: Column(
+          children: [
+            CustomePageFromJson().GetWidget(context),
+          ],
+        ),
       ),
     );
   }

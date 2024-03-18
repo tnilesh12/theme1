@@ -1,495 +1,501 @@
-// import 'package:cached_network_image/cached_network_image.dart';
-// import 'package:flutter/material.dart';
-// import '../../helper/viewType.dart';
-// import '../../helper/util.dart';
-// import 'package:theme1/views/jsontoview/full_view/itgeek_widget_full_view.dart';
-
+import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter/material.dart';
+import 'package:theme1/modelClass/data_model.dart';
+import 'package:theme1/views/jsontoview/full_view/itgeek_widget_full_view.dart';
+import 'package:theme1/views/product_details_screen/widgets/widget_image.dart';
 // import '../../modelClass/data_model.dart';
 
-// class ItgeekWidgetBannerImage extends StatelessWidget {
-//   Function(ImageViewData) OnClick;
-//   ImageViewData imageViewData;
-//   ItgeekWidgetBannerImage(this.imageViewData, this.OnClick);
+class ItgeekWidgetBannerImage extends StatelessWidget {
+  Function(ImageWithTextData) OnClick;
+  ImageWithTextData imageWithTextData;
+  ItgeekWidgetBannerImage(this.imageWithTextData, this.OnClick);
 
-//   @override
-//   Widget build(BuildContext context) {
-//     if (imageViewData.imageViewViewType == ViewType.ImageViewFull.name) {
-//       return InkWell(
-//           onTap: () {
-//             OnClick(imageViewData);
-//           },
-//           child: FullImage(imageViewData));
-//     } else {
-//       return InkWell(
-//           onTap: () {
-//             OnClick(imageViewData);
-//           },
-//           child: HalfImage(imageViewData));
-//     }
-//   }
-// }
+  @override
+  Widget build(BuildContext context) {
+    // if (imageWithTextData.imageViewViewType == ViewType.ImageViewFull.name) {
+    return InkWell(
+        onTap: () {
+          OnClick(imageWithTextData);
+        },
+        child: FullImage(imageWithTextData));
+    // } else {
+    //   return InkWell(
+    //       onTap: () {
+    //         OnClick(imageWithTextData);
+    //       },
+    //       child: HalfImage(imageWithTextData));
+    // }
+  }
+}
 
-// class FullImage extends StatefulWidget {
-//   ImageViewData imageViewData;
+class FullImage extends StatefulWidget {
+  ImageWithTextData imageWithTextData;
 
-//   FullImage(this.imageViewData);
+  FullImage(this.imageWithTextData);
 
-//   @override
-//   State<FullImage> createState() => _FullImageState();
-// }
+  @override
+  State<FullImage> createState() => _FullImageState();
+}
 
-// class _FullImageState extends State<FullImage> {
-//   var controller = TextEditingController();
+class _FullImageState extends State<FullImage> {
+  var controller = TextEditingController();
 
-//   @override
-//   void initState() {
-//     controller.addListener(() {
-//       setState(() {
-//         mytext = controller.text;
-//       });
-//     });
-//     controller.text = widget.imageViewData.description!;
-//     super.initState();
-//   }
+  @override
+  void initState() {
+    controller.addListener(() {
+      setState(() {
+        mytext = controller.text;
+      });
+    });
+    controller.text = widget.imageWithTextData.description!;
+    super.initState();
+  }
 
-//   @override
-//   void dispose() {
-//     controller.dispose();
-//     super.dispose();
-//   }
+  @override
+  void dispose() {
+    controller.dispose();
+    super.dispose();
+  }
 
-//   String mytext = "";
+  String mytext = "";
 
-//   @override
-//   Widget build(BuildContext context) {
-//     var titleTextColor = Util.getColorFromHex(
-//         widget.imageViewData.styleProperties!.titleTextColor!);
-//     var descriptionTextColor = Util.getColorFromHex(
-//         widget.imageViewData.styleProperties!.descriptionTextColor!);
-//     var bgColor = Util.getColorFromHex(
-//         widget.imageViewData.styleProperties!.backgroundColor!);
-//     int maxLines =
-//         widget.imageViewData.styleProperties!.descriptionTextNoOfLines!;
-//     double fontSize =
-//         widget.imageViewData.styleProperties!.descriptionTextFontSize!;
-//     return Container(
-//         margin: EdgeInsets.all(
-//             widget.imageViewData.styleProperties!.backgroundMargin!),
-//         padding: EdgeInsets.all(
-//             widget.imageViewData.styleProperties!.backgroundPadding!),
-//         decoration: BoxDecoration(
-//           borderRadius: BorderRadius.circular(
-//               widget.imageViewData.styleProperties!.backgroundRadius!),
-//           color: bgColor,
-//         ),
-//         width: double.infinity,
-//         child: Column(children: <Widget>[
-//           Container(
-//             margin:
-//                 EdgeInsets.all(widget.imageViewData.styleProperties!.margin!),
-//             padding:
-//                 EdgeInsets.all(widget.imageViewData.styleProperties!.padding!),
-//             child: ClipRRect(
-//                 borderRadius: BorderRadius.circular(
-//                     widget.imageViewData.styleProperties!.radius!),
-//                 child: widget.imageViewData.imageSrc != ""
-//                     ? CachedNetworkImage(
-//                         fit: BoxFit.cover,
-//                         width: double.infinity,
-//                         imageUrl: widget.imageViewData.imageSrc!,
-//                         placeholder: (context, url) => Image.asset(
-//                               'assets/images/placeholder-image.jpg',
-//                               package: 'jsontoview',
-//                               fit: BoxFit.fill,
-//                             ),
-//                         errorWidget: (context, url, error) => Image.asset(
-//                               'assets/images/placeholder-image.jpg',
-//                               package: 'jsontoview',
-//                               fit: BoxFit.fill,
-//                             ))
-//                     : Container()),
-//           ),
-//           widget.imageViewData.title != ""
-//               ? Container(
-//                   margin: EdgeInsets.all(
-//                       widget.imageViewData.styleProperties!.margin!),
-//                   padding: EdgeInsets.all(
-//                       widget.imageViewData.styleProperties!.padding!),
-//                   alignment:
-//                       widget.imageViewData.styleProperties!.alignment! == "left"
-//                           ? Alignment.centerLeft
-//                           : widget.imageViewData.styleProperties!.alignment! ==
-//                                   "right"
-//                               ? Alignment.centerRight
-//                               : Alignment.center,
-//                   child: Text(
-//                     widget.imageViewData.title!,
-//                     style: TextStyle(
-//                             fontFamily: 'Cinzel',
-//                         color: titleTextColor,
-//                         fontWeight: FontWeight.bold,
-//                         fontSize: widget
-//                             .imageViewData.styleProperties!.titleTextFontSize!),
-//                     maxLines: widget
-//                         .imageViewData.styleProperties!.titleTextNoOfLines!,
-//                   ),
-//                 )
-//               : Container(),
-//           LayoutBuilder(builder: (context, size) {
-//             var span = TextSpan(
-//               text: mytext,
-//               style: TextStyle(
-//                             fontFamily: 'Cinzel',fontSize: fontSize),
-//             );
+  @override
+  Widget build(BuildContext context) {
+    var headingTextColor = Colors.red;
+    var subheadingTextColor = Colors.orange;
+    var descriptionTextColor = Colors.blue;
+    var bgColor = Colors.grey;
 
-//             // Use a textpainter to determine if it will exceed max lines
-//             var tp = TextPainter(
-//               maxLines: maxLines,
-//               textDirection: TextDirection.ltr,
-//               text: span,
-//             );
+    int descriptionMaxLines = 3; //widget.imageWithTextData.styleProperties!.descriptionTextNoOfLines!;
+    double descriptionFontSize = 20; //descriptionFontSize;
+    double headingFontSize = 26;
+    double subheadingFontSize = 23;
 
-//             // trigger it to layout
-//             tp.layout(maxWidth: size.maxWidth);
+    return Container(
+        margin: EdgeInsets.all(5),
+        padding: EdgeInsets.all(5),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(5),
+          color: bgColor,
+        ),
+        width: double.infinity,
+        child: Column(children: <Widget>[
+          WidgetImage(widget.imageWithTextData.image!),
+          Container(
+            margin: EdgeInsets.all(5),
+            padding: EdgeInsets.all(5),
+            child: ClipRRect(
+                borderRadius: BorderRadius.circular(5),
+                child: widget.imageWithTextData.image != ""
+                    ? CachedNetworkImage(
+                        fit: BoxFit.cover,
+                        width: double.infinity,
+                        imageUrl: widget.imageWithTextData.image!,
+                        placeholder: (context, url) => Image.asset(
+                              'assets/images/placeholder-image.jpg',
+                              package: 'jsontoview',
+                              fit: BoxFit.fill,
+                            ),
+                        errorWidget: (context, url, error) => Image.asset(
+                              'assets/images/placeholder-image.jpg',
+                              package: 'jsontoview',
+                              fit: BoxFit.fill,
+                            ))
+                    : Container()),
+          ),
+          widget.imageWithTextData.heading != ""
+              ? Container(
+                  margin: EdgeInsets.all(0),
+                  padding: EdgeInsets.all(2),
+                  alignment:
+                      //  widget.imageWithTextData.styleProperties!.alignment! == "left" ? Alignment.centerLeft
+                      //     : widget.imageWithTextData.styleProperties!.alignment! == "right"
+                      //         ? Alignment.centerRight
+                      //         :
+                      Alignment.center,
+                  child: Text(
+                    widget.imageWithTextData.heading!,
+                    style: TextStyle(
+                        fontFamily: 'Cinzel',
+                        color: headingTextColor,
+                        fontWeight: FontWeight.bold,
+                        fontSize: headingFontSize!),
+                    maxLines:
+                        2, // widget.imageWithTextData.styleProperties!.headingTextNoOfLines!,
+                  ),
+                )
+              : Container(),
+          widget.imageWithTextData.subheading != ""
+              ? Container(
+                  margin: EdgeInsets.all(0),
+                  padding: EdgeInsets.all(2),
+                  alignment:
+                      //  widget.imageWithTextData.styleProperties!.alignment! == "left" ? Alignment.centerLeft
+                      //     : widget.imageWithTextData.styleProperties!.alignment! == "right"
+                      //         ? Alignment.centerRight
+                      //         :
+                      Alignment.center,
+                  child: Text(
+                    widget.imageWithTextData.subheading!,
+                    style: TextStyle(
+                        fontFamily: 'Cinzel',
+                        color: subheadingTextColor,
+                        fontWeight: FontWeight.bold,
+                        fontSize: subheadingFontSize!),
+                    maxLines:
+                        2, // widget.imageWithTextData.styleProperties!.headingTextNoOfLines!,
+                  ),
+                )
+              : Container(),
+          LayoutBuilder(builder: (context, size) {
+            var span = TextSpan(
+              text: mytext,
+              style: TextStyle(
+                  fontFamily: 'Cinzel', fontSize: descriptionFontSize),
+            );
 
-//             // whether the text overflowed or not
-//             var exceeded = tp.didExceedMaxLines;
-//             print("cjvgffmdf ${exceeded}");
+            // Use a textpainter to determine if it will exceed max lines
+            var tp = TextPainter(
+              maxLines: descriptionMaxLines,
+              textDirection: TextDirection.ltr,
+              text: span,
+            );
 
-//             return widget.imageViewData.description != ""
-//                 ? Column(
-//                     children: [
-//                       Container(
-//                         margin: EdgeInsets.all(
-//                             widget.imageViewData.styleProperties!.margin!),
-//                         padding: EdgeInsets.all(
-//                             widget.imageViewData.styleProperties!.padding!),
-//                         alignment:
-//                             widget.imageViewData.styleProperties!.alignment! ==
-//                                     "left"
-//                                 ? Alignment.centerLeft
-//                                 : widget.imageViewData.styleProperties!
-//                                             .alignment! ==
-//                                         "right"
-//                                     ? Alignment.centerRight
-//                                     : Alignment.center,
-//                         child: Text.rich(
-//                           span,
-//                           overflow: TextOverflow.ellipsis,
-//                           style: TextStyle(
-//                             fontFamily: 'Cinzel',
-//                               color: descriptionTextColor,
-//                               fontWeight: FontWeight.bold,
-//                               fontSize: widget.imageViewData.styleProperties!
-//                                   .descriptionTextFontSize!),
-//                           maxLines: maxLines,
-//                         ),
-//                       ),
-//                       InkWell(
-//                         onTap: () {
-//                           print("more clicked");
+            // trigger it to layout
+            tp.layout(maxWidth: size.maxWidth);
 
-//                           Navigator.push(
-//                               context,
-//                               MaterialPageRoute(
-//                                   builder: (context) => ItgeekWidgetFullView(
-//                                       widget.imageViewData.imageSrc!,
-//                                       widget.imageViewData.title!,
-//                                       widget.imageViewData.description!,
-//                                       widget.imageViewData.styleProperties!
-//                                           .alignment,
-//                                       widget.imageViewData.styleProperties!
-//                                           .titleTextColor,
-//                                       widget.imageViewData.styleProperties!
-//                                           .descriptionTextColor,
-//                                       widget.imageViewData.styleProperties!
-//                                           .titleTextFontSize!,
-//                                       widget.imageViewData.styleProperties!
-//                                           .descriptionTextFontSize!,
-//                                       widget.imageViewData.styleProperties!
-//                                           .padding!,
-//                                       widget.imageViewData.styleProperties!
-//                                           .margin!,
-//                                       widget.imageViewData.styleProperties!
-//                                           .backgroundColor,
-//                                       widget.imageViewData.styleProperties!
-//                                           .backgroundColor)));
-//                         },
-//                         child: Text(
-//                           exceeded ? 'Read More' : '',
-//                           style: TextStyle(
-//                             fontFamily: 'Cinzel',
-//                               color: Colors.blue,
-//                               fontWeight: FontWeight.bold,
-//                               fontSize: 12),
-//                         ),
-//                       ),
-//                     ],
-//                   )
-//                 : Container();
-//           })
-//         ]));
-//   }
-// }
+            // whether the text overflowed or not
+            var exceeded = tp.didExceedMaxLines;
+            print("cjvgffmdf ${exceeded}");
 
-// class HalfImage extends StatefulWidget {
-//   ImageViewData imageViewData;
+            return widget.imageWithTextData.description != ""
+                ? Column(
+                    children: [
+                      Container(
+                        margin: EdgeInsets.all(0),
+                        padding: EdgeInsets.all(2),
+                        alignment:
+                            //  widget.imageWithTextData.styleProperties!.alignment! == "left"
+                            //     ? Alignment.centerLeft
+                            //     : widget.imageWithTextData.styleProperties!.alignment! == "right"
+                            //         ? Alignment.centerRight
+                            //         :
+                            Alignment.center,
+                        child: Text.rich(
+                          span,
+                          overflow: TextOverflow.ellipsis,
+                          style: TextStyle(
+                              fontFamily: 'Cinzel',
+                              color: descriptionTextColor,
+                              fontWeight: FontWeight.bold,
+                              fontSize: descriptionFontSize),
+                          maxLines: descriptionMaxLines,
+                        ),
+                      ),
+                      InkWell(
+                        onTap: () {
+                          print("read more clicked");
 
-//   HalfImage(this.imageViewData);
+                          // Navigator.push(
+                          //     context,
+                          //     MaterialPageRoute(
+                          //         builder: (context) => ItgeekWidgetFullView(
+                          //             widget.imageWithTextData.image!,
+                          //             widget.imageWithTextData.heading!,
+                          //             widget.imageWithTextData.description!,
+                          //             widget.imageWithTextData.styleProperties!
+                          //                 .alignment,
+                          //             widget.imageWithTextData.styleProperties!
+                          //                 .headingTextColor,
+                          //             widget.imageWithTextData.styleProperties!
+                          //                 .descriptionTextColor,
+                          //             widget.imageWithTextData.styleProperties!
+                          //                 .headingTextFontSize!,
+                          //             widget.imageWithTextData.styleProperties!
+                          //                 .descriptionTextFontSize!,
+                          //             widget.imageWithTextData.styleProperties!
+                          //                 .padding!,
+                          //             widget.imageWithTextData.styleProperties!
+                          //                 .margin!,
+                          //             widget.imageWithTextData.styleProperties!
+                          //                 .backgroundColor,
+                          //             widget.imageWithTextData.styleProperties!
+                          //                 .backgroundColor)));
+                        },
+                        child: Text(
+                          exceeded ? 'Read More' : '',
+                          style: TextStyle(
+                              fontFamily: 'Cinzel',
+                              color: Colors.blue,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 12),
+                        ),
+                      ),
+                    ],
+                  )
+                : Container();
+          })
+        ]));
+  }
+}
 
-//   @override
-//   State<HalfImage> createState() => _HalfImageState();
-// }
+/*
+class HalfImage extends StatefulWidget {
+  ImageWithTextData imageWithTextData;
 
-// class _HalfImageState extends State<HalfImage> {
-//   var controller = TextEditingController();
+  HalfImage(this.imageWithTextData);
 
-//   @override
-//   void initState() {
-//     controller.addListener(() {
-//       setState(() {
-//         mytext = controller.text;
-//       });
-//     });
-//     controller.text = widget.imageViewData.description!;
-//     super.initState();
-//   }
+  @override
+  State<HalfImage> createState() => _HalfImageState();
+}
 
-//   @override
-//   void dispose() {
-//     controller.dispose();
-//     super.dispose();
-//   }
+class _HalfImageState extends State<HalfImage> {
+  var controller = TextEditingController();
 
-//   String mytext = "";
+  @override
+  void initState() {
+    controller.addListener(() {
+      setState(() {
+        mytext = controller.text;
+      });
+    });
+    controller.text = widget.imageWithTextData.description!;
+    super.initState();
+  }
 
-//   @override
-//   Widget build(BuildContext context) {
-//     var titleTextColor = Util.getColorFromHex(
-//         widget.imageViewData.styleProperties!.titleTextColor!);
-//     var descriptionTextColor = Util.getColorFromHex(
-//         widget.imageViewData.styleProperties!.descriptionTextColor!);
-//     var bgColor = Util.getColorFromHex(
-//         widget.imageViewData.styleProperties!.backgroundColor!);
-//     int maxLines =
-//         widget.imageViewData.styleProperties!.descriptionTextNoOfLines!;
-//     double fontSize =
-//         widget.imageViewData.styleProperties!.descriptionTextFontSize!;
+  @override
+  void dispose() {
+    controller.dispose();
+    super.dispose();
+  }
 
-//     return Container(
-//       margin: EdgeInsets.all(
-//           widget.imageViewData.styleProperties!.backgroundMargin!),
-//       padding: EdgeInsets.all(
-//           widget.imageViewData.styleProperties!.backgroundPadding!),
-//       decoration: BoxDecoration(
-//         borderRadius: BorderRadius.circular(
-//             widget.imageViewData.styleProperties!.backgroundRadius!),
-//         color: bgColor,
-//       ),
-//       child: Row(
-//         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-//         crossAxisAlignment: CrossAxisAlignment.start,
-//         children: [
-//           Container(
-//             margin:
-//                 EdgeInsets.all(widget.imageViewData.styleProperties!.margin!),
-//             padding:
-//                 EdgeInsets.all(widget.imageViewData.styleProperties!.padding!),
-//             // width: MediaQuery.of(context).size.width * .04,
-//             height: 220,
+  String mytext = "";
 
-//             // decoration: BoxDecoration(
-//             // borderRadius: BorderRadius.circular(10.0),
-//             // image: DecorationImage(
-//             //   image: NetworkImage(
-//             //     widget.imageViewData.imageSrc!,
-//             //   ),
-//             //   fit: BoxFit.cover,
-//             // ),
-//             // ),
-//             child: ClipRRect(
-//                 borderRadius: BorderRadius.circular(
-//                     widget.imageViewData.styleProperties!.radius!),
-//                 child:
-//                  CachedNetworkImage(
-//                         fit: BoxFit.cover,
-//                         // width: double.infinity,
-//                         imageUrl: widget.imageViewData.imageSrc!,
-//                         placeholder: (context, url) => Image.asset(
-//                               'assets/images/placeholder-image.jpg',
-//                               package: 'jsontoview',
-//                               fit: BoxFit.fill,
-//                             ),
-//                         errorWidget: (context, url, error) => Image.asset(
-//                               'assets/images/placeholder-image.jpg',
-//                               package: 'jsontoview',
-//                               fit: BoxFit.fill,
-//                             ))
+  @override
+  Widget build(BuildContext context) {
+    var headingTextColor = Util.getColorFromHex(
+        widget.imageWithTextData.styleProperties!.headingTextColor!);
+    var descriptionTextColor = Util.getColorFromHex(
+        widget.imageWithTextData.styleProperties!.descriptionTextColor!);
+    var bgColor = Util.getColorFromHex(
+        widget.imageWithTextData.styleProperties!.backgroundColor!);
+    int descriptionMaxLines =
+        widget.imageWithTextData.styleProperties!.descriptionTextNoOfLines!;
+    double fontSize =
+        descriptionFontSize;
+
+    return Container(
+      margin: EdgeInsets.all(
+          widget.imageWithTextData.styleProperties!.backgroundMargin!),
+      padding: EdgeInsets.all(
+          widget.imageWithTextData.styleProperties!.backgroundPadding!),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(
+            widget.imageWithTextData.styleProperties!.backgroundRadius!),
+        color: bgColor,
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Container(
+            margin:
+                EdgeInsets.all(widget.imageWithTextData.styleProperties!.margin!),
+            padding:
+                EdgeInsets.all(widget.imageWithTextData.styleProperties!.padding!),
+            // width: MediaQuery.of(context).size.width * .04,
+            height: 220,
+
+            // decoration: BoxDecoration(
+            // borderRadius: BorderRadius.circular(10.0),
+            // image: DecorationImage(
+            //   image: NetworkImage(
+            //     widget.imageWithTextData.image!,
+            //   ),
+            //   fit: BoxFit.cover,
+            // ),
+            // ),
+            child: ClipRRect(
+                borderRadius: BorderRadius.circular(
+                    widget.imageWithTextData.styleProperties!.radius!),
+                child:
+                 CachedNetworkImage(
+                        fit: BoxFit.cover,
+                        // width: double.infinity,
+                        imageUrl: widget.imageWithTextData.image!,
+                        placeholder: (context, url) => Image.asset(
+                              'assets/images/placeholder-image.jpg',
+                              package: 'jsontoview',
+                              fit: BoxFit.fill,
+                            ),
+                        errorWidget: (context, url, error) => Image.asset(
+                              'assets/images/placeholder-image.jpg',
+                              package: 'jsontoview',
+                              fit: BoxFit.fill,
+                            ))
                 
-//                 ),
-//           ),
-//           Flexible(
-//             child: Column(
-//               crossAxisAlignment: CrossAxisAlignment.start,
-//               mainAxisAlignment: MainAxisAlignment.center,
-//               children: [
-//                 widget.imageViewData.title != ""
-//                     ? Container(
-//                         margin: EdgeInsets.all(
-//                             widget.imageViewData.styleProperties!.margin!),
-//                         padding: EdgeInsets.all(
-//                             widget.imageViewData.styleProperties!.padding!),
-//                         alignment:
-//                             widget.imageViewData.styleProperties!.alignment! ==
-//                                     "left"
-//                                 ? Alignment.centerLeft
-//                                 : widget.imageViewData.styleProperties!
-//                                             .alignment! ==
-//                                         "right"
-//                                     ? Alignment.centerRight
-//                                     : Alignment.center,
-//                         child: Text(
-//                           widget.imageViewData.title!,
-//                           style: TextStyle(
-//                             fontFamily: 'Cinzel',
-//                               fontWeight: FontWeight.bold,
-//                               fontSize: widget.imageViewData.styleProperties!
-//                                   .titleTextFontSize!,
-//                               color: titleTextColor),
-//                           maxLines: widget.imageViewData.styleProperties!
-//                               .titleTextNoOfLines!,
-//                           textAlign: TextAlign.center,
-//                         ),
-//                       )
-//                     : Container(),
-//                 LayoutBuilder(builder: (context, size) {
-//                   var span = TextSpan(
-//                     text: mytext,
-//                     style: TextStyle(
-//                             fontFamily: 'Cinzel',fontSize: fontSize),
-//                   );
+                ),
+          ),
+          Flexible(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                widget.imageWithTextData.heading != ""
+                    ? Container(
+                        margin: EdgeInsets.all(5),
+                        padding: EdgeInsets.all(5),
+                        alignment:
+                            widget.imageWithTextData.styleProperties!.alignment! ==
+                                    "left"
+                                ? Alignment.centerLeft
+                                : widget.imageWithTextData.styleProperties!
+                                            .alignment! ==
+                                        "right"
+                                    ? Alignment.centerRight
+                                    : Alignment.center,
+                        child: Text(
+                          widget.imageWithTextData.heading!,
+                          style: TextStyle(
+                            fontFamily: 'Cinzel',
+                              fontWeight: FontWeight.bold,
+                              fontSize: widget.imageWithTextData.styleProperties!
+                                  .headingTextFontSize!,
+                              color: headingTextColor),
+                          maxLines: widget.imageWithTextData.styleProperties!
+                              .headingTextNoOfLines!,
+                          textAlign: TextAlign.center,
+                        ),
+                      )
+                    : Container(),
+                LayoutBuilder(builder: (context, size) {
+                  var span = TextSpan(
+                    text: mytext,
+                    style: TextStyle(
+                            fontFamily: 'Cinzel',fontSize: fontSize),
+                  );
 
-//                   // Use a textpainter to determine if it will exceed max lines
-//                   var tp = TextPainter(
-//                     maxLines: maxLines,
-//                     textAlign: TextAlign.left,
-//                     textDirection: TextDirection.ltr,
-//                     text: span,
-//                   );
+                  // Use a textpainter to determine if it will exceed max lines
+                  var tp = TextPainter(
+                    maxLines: descriptionMaxLines,
+                    textAlign: TextAlign.left,
+                    textDirection: TextDirection.ltr,
+                    text: span,
+                  );
 
-//                   // trigger it to layout
-//                   tp.layout(maxWidth: size.maxWidth);
+                  // trigger it to layout
+                  tp.layout(maxWidth: size.maxWidth);
 
-//                   // whether the text overflowed or not
-//                   var exceeded = tp.didExceedMaxLines;
-//                   print("cjvgffmdf ${exceeded}");
-//                   return Expanded(
-//                     child: Container(
-//                         margin: EdgeInsets.all(
-//                             widget.imageViewData.styleProperties!.margin!),
-//                         padding: EdgeInsets.all(
-//                             widget.imageViewData.styleProperties!.padding!),
-//                         // height: double.infinity,
-//                         decoration: BoxDecoration(
-//                           borderRadius: BorderRadius.circular(
-//                               widget.imageViewData.styleProperties!.radius!),
-//                           color: bgColor.withOpacity(0.5),
-//                         ),
-//                         child: Column(
-//                           crossAxisAlignment: CrossAxisAlignment.center,
-//                           mainAxisAlignment: MainAxisAlignment.center,
-//                           children: [
-//                             widget.imageViewData.description != ""
-//                                 ? Column(
-//                                     children: [
-//                                       Container(
-//                                         child: Text.rich(
-//                                           span,
-//                                           overflow: TextOverflow.ellipsis,
-//                                           style: TextStyle(
-//                             fontFamily: 'Cinzel',
-//                                               fontSize: widget
-//                                                   .imageViewData
-//                                                   .styleProperties!
-//                                                   .descriptionTextFontSize!,
-//                                               color: descriptionTextColor!),
-//                                           maxLines: maxLines,
-//                                           textAlign: TextAlign.center,
-//                                         ),
-//                                       ),
-//                                       InkWell(
-//                                         onTap: () {
-//                                           print("more clicked");
+                  // whether the text overflowed or not
+                  var exceeded = tp.didExceedMaxLines;
+                  print("cjvgffmdf ${exceeded}");
+                  return Expanded(
+                    child: Container(
+                        margin: EdgeInsets.all(5),
+                        padding: EdgeInsets.all(5),
+                        // height: double.infinity,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(
+                              widget.imageWithTextData.styleProperties!.radius!),
+                          color: bgColor.withOpacity(0.5),
+                        ),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            widget.imageWithTextData.description != ""
+                                ? Column(
+                                    children: [
+                                      Container(
+                                        child: Text.rich(
+                                          span,
+                                          overflow: TextOverflow.ellipsis,
+                                          style: TextStyle(
+                            fontFamily: 'Cinzel',
+                                              fontSize: widget
+                                                  .imageWithTextData
+                                                  .styleProperties!
+                                                  .descriptionTextFontSize!,
+                                              color: descriptionTextColor!),
+                                          maxLines: descriptionMaxLines,
+                                          textAlign: TextAlign.center,
+                                        ),
+                                      ),
+                                      InkWell(
+                                        onTap: () {
+                                          print("more clicked");
 
-//                                           Navigator.push(
-//                                               context,
-//                                               MaterialPageRoute(
-//                                                   builder: (context) =>
-//                                                       ItgeekWidgetFullView(
-//                                                           widget.imageViewData
-//                                                               .imageSrc!,
-//                                                           widget.imageViewData
-//                                                               .title!,
-//                                                           widget.imageViewData
-//                                                               .description!,
-//                                                           widget
-//                                                               .imageViewData
-//                                                               .styleProperties!
-//                                                               .alignment,
-//                                                           widget
-//                                                               .imageViewData
-//                                                               .styleProperties!
-//                                                               .titleTextColor,
-//                                                           widget
-//                                                               .imageViewData
-//                                                               .styleProperties!
-//                                                               .descriptionTextColor,
-//                                                           widget
-//                                                               .imageViewData
-//                                                               .styleProperties!
-//                                                               .titleTextFontSize!,
-//                                                           widget
-//                                                               .imageViewData
-//                                                               .styleProperties!
-//                                                               .descriptionTextFontSize!,
-//                                                           widget
-//                                                               .imageViewData
-//                                                               .styleProperties!
-//                                                               .padding!,
-//                                                           widget
-//                                                               .imageViewData
-//                                                               .styleProperties!
-//                                                               .margin!,
-//                                                           widget
-//                                                               .imageViewData
-//                                                               .styleProperties!
-//                                                               .backgroundColor,
-//                                                           widget
-//                                                               .imageViewData
-//                                                               .styleProperties!
-//                                                               .backgroundColor)));
-//                                         },
-//                                         child: Text(
-//                                           exceeded ? 'Read More' : '',
-//                                           style: TextStyle(
-//                             fontFamily: 'Cinzel',
-//                                               color: Colors.blue,
-//                                               fontWeight: FontWeight.bold,
-//                                               fontSize: 12),
-//                                         ),
-//                                       ),
-//                                     ],
-//                                   )
-//                                 : Container()
-//                           ],
-//                         )),
-//                   );
-//                 }),
-//               ],
-//             ),
-//           ),
-//         ],
-//       ),
-//     );
-//   }
-// }
+                                          Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      ItgeekWidgetFullView(
+                                                          widget.imageWithTextData
+                                                              .image!,
+                                                          widget.imageWithTextData
+                                                              .heading!,
+                                                          widget.imageWithTextData
+                                                              .description!,
+                                                          widget
+                                                              .imageWithTextData
+                                                              .styleProperties!
+                                                              .alignment,
+                                                          widget
+                                                              .imageWithTextData
+                                                              .styleProperties!
+                                                              .headingTextColor,
+                                                          widget
+                                                              .imageWithTextData
+                                                              .styleProperties!
+                                                              .descriptionTextColor,
+                                                          widget
+                                                              .imageWithTextData
+                                                              .styleProperties!
+                                                              .headingTextFontSize!,
+                                                          widget
+                                                              .imageWithTextData
+                                                              .styleProperties!
+                                                              .descriptionTextFontSize!,
+                                                          widget
+                                                              .imageWithTextData
+                                                              .styleProperties!
+                                                              .padding!,
+                                                          widget
+                                                              .imageWithTextData
+                                                              .styleProperties!
+                                                              .margin!,
+                                                          widget
+                                                              .imageWithTextData
+                                                              .styleProperties!
+                                                              .backgroundColor,
+                                                          widget
+                                                              .imageWithTextData
+                                                              .styleProperties!
+                                                              .backgroundColor)));
+                                        },
+                                        child: Text(
+                                          exceeded ? 'Read More' : '',
+                                          style: TextStyle(
+                            fontFamily: 'Cinzel',
+                                              color: Colors.blue,
+                                              fontWeight: FontWeight.bold,
+                                              fontSize: 12),
+                                        ),
+                                      ),
+                                    ],
+                                  )
+                                : Container()
+                          ],
+                        )),
+                  );
+                }),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+*/

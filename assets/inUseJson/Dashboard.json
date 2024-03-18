@@ -52,6 +52,23 @@
             ]
         },
         {
+            "Block_Name": "Collection_Grid_Block",
+            "CollectionGridData": {
+                "Heading": "Shop By Category",
+                "Enable_Slider": "false",
+                "Columns": 4,
+                "Rows": 1,
+                "CollectionList": [
+                    {
+                        "ImageSrc": "",
+                        "productTitle": "Title",
+                        "Action": "",
+                        "id": ""
+                    }
+                ]
+            }
+        },
+        {
             "Block_Name": "Image_Banner_Slider_Block",
             "ImageBannerSliderData": {
                 "SlideHeight": "Medium",
@@ -131,23 +148,6 @@
                         "Action": "Homepage2",
                         "id": "null",
                         "productTitle": ""
-                    }
-                ]
-            }
-        },
-        {
-            "Block_Name": "Collection_Grid_Block",
-            "CollectionGridData": {
-                "Heading": "Shop By Category",
-                "Enable_Slider": "false",
-                "Columns": 4,
-                "Rows": 1,
-                "CollectionList": [
-                    {
-                        "ImageSrc": "",
-                        "productTitle": "Title",
-                        "Action": "",
-                        "id": ""
                     }
                 ]
             }

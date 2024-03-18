@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:theme1/helper/util.dart';
+import 'package:theme1/utils/util.dart';
 // import '../theme/app_colors.dart';
 import '../theme/app_text_theme.dart';
 

@@ -32,7 +32,7 @@ class BuilderJsonTheme1 {
   ProductGridData? productGridData;
   TestimonialsData? testimonialsData;
   ImageWithTextData? imageWithTextData;
-  Divider? divider;
+  DividerData? dividerData;
   IconTextData? iconTextData;
   VideoData? videoData;
   SearchData? searchData;
@@ -47,7 +47,7 @@ class BuilderJsonTheme1 {
       this.productGridData,
       this.testimonialsData,
       this.imageWithTextData,
-      this.divider,
+      this.dividerData,
       this.iconTextData,
       this.videoData,
       this.searchData,
@@ -74,8 +74,8 @@ class BuilderJsonTheme1 {
     imageWithTextData = json['ImageWithTextData'] != null
         ? new ImageWithTextData.fromJson(json['ImageWithTextData'])
         : null;
-    divider = json['Divider'] != null
-        ? new Divider.fromJson(json['Divider'])
+    dividerData = json['Divider'] != null
+        ? new DividerData.fromJson(json['Divider'])
         : null;
     iconTextData = json['IconTextData'] != null
         ? new IconTextData.fromJson(json['IconTextData'])
@@ -115,8 +115,8 @@ class BuilderJsonTheme1 {
     if (this.imageWithTextData != null) {
       data['ImageWithTextData'] = this.imageWithTextData!.toJson();
     }
-    if (this.divider != null) {
-      data['Divider'] = this.divider!.toJson();
+    if (this.dividerData != null) {
+      data['Divider'] = this.dividerData!.toJson();
     }
     if (this.iconTextData != null) {
       data['IconTextData'] = this.iconTextData!.toJson();

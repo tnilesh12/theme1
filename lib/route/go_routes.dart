@@ -1,6 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:theme1/temporary/spash_screen.dart';
 import 'package:theme1/views/cart_screen/cart_screen.dart';
 import 'package:theme1/views/checkout/checkout_screen.dart';
 import 'package:theme1/views/common_screens/error_screen.dart';

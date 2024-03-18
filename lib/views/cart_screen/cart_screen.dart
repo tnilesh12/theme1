@@ -2,7 +2,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:theme1/helper/dialogs.dart';
+import 'package:theme1/utils/dialogs.dart';
 import 'package:theme1/route/go_routes.dart';
 import 'package:theme1/theme/app_theme.dart';
 import 'package:theme1/theme/custom_text_theme.dart';

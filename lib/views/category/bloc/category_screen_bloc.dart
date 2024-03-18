@@ -1,46 +1,116 @@
-// import 'dart:async';
+import 'dart:async';
 
-// import 'package:bloc/bloc.dart';
-// import 'package:equatable/equatable.dart';
-// import 'package:tacknbark/shopify_graphql/models/models.dart';
+import 'package:bloc/bloc.dart';
+import 'package:equatable/equatable.dart';
+import 'package:thesatanictemple/shopify_graphql/models/models.dart';
+import 'package:thesatanictemple/shopify_graphql/shopify/shopify.dart';
 
-// import '../../../../shopify_graphql/models/src/menus_details/menus.dart';
-// import 'package:tacknbark/globels.dart' as globals;
+import '../../../../shopify_graphql/models/src/menus_details/menus.dart';
+import '../../../../globels.dart' as globals;
 
-// part 'category_screen_event.dart';
+import '../../../../shopify_graphql/shopify/src/shopify_auth.dart';
+import '../../../../shopify_graphql/shopify/src/shopify_menu.dart';
 
-// part 'category_screen_state.dart';
+part 'category_screen_event.dart';
 
-// class CategoryScreenBloc
-//     extends Bloc<CategoryScreenEvent, CategoryScreenState> {
-//   CategoryScreenBloc() : super(CategoryScreenInitial()) {
-//     on<CategoryScreenEvent>((event, emit) {});
+part 'category_screen_state.dart';
 
-//     on<OnCategoryItemClick>((event, emit) {
-//       // print("object" + event.index.toString());
-//       ChnageStyle = event.index;
-//       emit(CategoryScreenLoaded(_data!, event.index));
-//     });
+class CategoryScreenBloc
+    extends Bloc<CategoryScreenEvent, CategoryScreenState> {
+  CategoryScreenBloc() : super(CategoryScreenInitial()) {
+    on<CategoryScreenEvent>((event, emit) {});
 
-//     on<OnSubCategoryItemClick>((event, emit) {});
-//   }
+    on<OnCategoryItemClick>((event, emit) {
+      ChnageStyle = event.index;
+      print("change index" + event.index.toString());
+      LoadDataSubCollection([]);
+    });
 
-//   int? ChnageStyle = 0;
-//   Menus? _data;
+    on<OnSubCategoryItemClick>((event, emit) {});
+    // LoadData();
+  }
 
-//   void LoadData() async {
-//     if (await globals.postRepository.isConnected()) {
-//       emit(CategoryScreenLoading());
-//       _data = await globals.shopifyMenu.getMenusByHandle("app-menu");
-//       // print(_data!.title.toString());
+  int? ChnageStyle = 0;
+  Menus? _data;
 
-//       if (_data == null) {
-//         emit(CategoryScreenNoDataFound());
-//       } else {
-//         emit(CategoryScreenLoaded(_data!, 0));
-//       }
-//     } else {
-//       emit(CategoryScreenNoInternetConnection());
-//     }
-//   }
-// }
+  List<String> ids = [];
+
+  // void LoadData() async {
+  //   if (await globals.postRepository.isConnected()) {
+  //    // emit(CategoryScreenLoading());
+  //     _data = await ShopifyMenu.instance.getMenusByHandle("app-menu");
+  //     print("data load from menu");
+  //     _data!.items!.forEach((element) {
+  //       ids.add(element!.resourceId.toString());
+  //       print(element.resourceId.toString());
+  //     });
+  //     print("${ids.length}");
+  //
+  //     // if (_data == null) {
+  //     //   emit(CategoryScreenNoDataFound());
+  //     // } else {
+  //     //   try {
+  //     //     emit(CategoryScreenLoaded(_data!, 0));
+  //     //   } catch (e) {}
+  //     // }
+  //   }
+  // else {
+  //   emit(CategoryScreenNoInternetConnection());
+  // }
+  // }
+
+//////////////////////////from collections/////////////
+
+  List<Collection> COLLECTION = [];
+  List<Collection> SUBCOLLECTION = [];
+
+  void LoadDataCollection() async {
+    // LoadData();
+    if (await globals.postRepository.isConnected()) {
+      emit(CategoryScreenLoadingCollection());
+      _data = await ShopifyMenu.instance.getMenusByHandle("app-menu");
+      print("data load from menu");
+      _data!.items!.forEach((element) {
+        if (element!.resourceId != null) {
+          if (element!.resourceId!.contains("Collection")) {
+            ids.add(element!.resourceId.toString());
+          }
+        }
+        print(element.resourceId.toString());
+      });
+      print(":lenght of data ${ids.length}");
+      COLLECTION.clear();
+      if (ids.isNotEmpty) {
+        COLLECTION = await ShopifyStore.instance.getCollectionsByIds(ids);
+      } else {
+        COLLECTION = await ShopifyStore.instance.getAllCollections();
+      }
+
+      if (COLLECTION == null) {
+        emit(CategoryScreenNoDataFound());
+      } else {
+        emit(CategoryScreenLoadedCollection());
+      }
+    } else {
+      emit(CategoryScreenNoInternetConnection());
+    }
+  }
+
+  void LoadDataSubCollection(List<String> ids) async {
+    if (await globals.postRepository.isConnected()) {
+      emit(CategoryScreenLoadingSubCollection());
+      if (ids.isNotEmpty)
+        SUBCOLLECTION = await ShopifyStore.instance.getCollectionsByIds(ids);
+      else
+        SUBCOLLECTION = await ShopifyStore.instance.getAllCollections();
+
+      if (SUBCOLLECTION == null) {
+        emit(CategoryScreenNoDataFound());
+      } else {
+        emit(CategoryScreenLoadedSubCollection());
+      }
+    } else {
+      emit(CategoryScreenNoInternetConnection());
+    }
+  }
+}

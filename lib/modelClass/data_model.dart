@@ -392,12 +392,12 @@ class ImageWithTextData {
   }
 }
 
-class Divider {
+class DividerData {
   int? space;
 
-  Divider({this.space});
+  DividerData({this.space});
 
-  Divider.fromJson(Map<String, dynamic> json) {
+  DividerData.fromJson(Map<String, dynamic> json) {
     space = json['Space'];
   }
 

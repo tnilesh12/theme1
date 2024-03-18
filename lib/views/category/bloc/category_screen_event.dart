@@ -1,26 +1,26 @@
-// part of 'category_screen_bloc.dart';
+part of 'category_screen_bloc.dart';
 
-// abstract class CategoryScreenEvent extends Equatable {
-//   const CategoryScreenEvent();
-// }
+abstract class CategoryScreenEvent extends Equatable {
+  const CategoryScreenEvent();
+}
 
-// class OnCategoryItemClick extends CategoryScreenEvent {
-//   int index;
+class OnCategoryItemClick extends CategoryScreenEvent {
+  int index;
 
-//   OnCategoryItemClick(this.index);
+  OnCategoryItemClick(this.index);
 
-//   @override
-//   // TODO: implement props
-//   List<Object?> get props => [];
-// }
+  @override
+  // TODO: implement props
+  List<Object?> get props => [];
+}
 
 
-// class OnSubCategoryItemClick extends CategoryScreenEvent {
-//   int index;
+class OnSubCategoryItemClick extends CategoryScreenEvent {
+  int index;
 
-//   OnSubCategoryItemClick(this.index);
+  OnSubCategoryItemClick(this.index);
 
-//   @override
-//   // TODO: implement props
-//   List<Object?> get props => [];
-// }
+  @override
+  // TODO: implement props
+  List<Object?> get props => [];
+}

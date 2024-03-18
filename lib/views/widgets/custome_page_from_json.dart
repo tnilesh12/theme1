@@ -4,9 +4,10 @@ import 'dart:convert';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:theme1/helper/action_type.dart';
-import 'package:theme1/helper/block_name.dart';
+import 'package:theme1/utils/action_type.dart';
+import 'package:theme1/utils/block_name.dart';
 import 'package:theme1/modelClass/builder_json_theme1.dart';
+import 'package:theme1/views/category/best_categorys/widget_best_category.dart';
 import 'package:theme1/views/jsontoview/faq_view/itgeek_widget_faq.dart';
 // import 'package:jsontoview/helper/action_type.dart';
 import 'package:theme1/views/jsontoview/banners_view/itgeek_widget_banner_image.dart';
@@ -53,16 +54,14 @@ class CustomePageFromJson {
                 BuilderJsonTheme1Model.fromJson(list);
             print("my list is nnnnnnnnnnnnnnnnnnnn ${model}");
 // return Text("Lljdflkdsdfkjdslkfjlk");
-           return Container(
+            return Container(
               // color: Util.getColorFromHex(model.backgroundColor.toString()),
               child: Column(
-                  children:
-                 model.builderJsonTheme1!.map((element) {
-                    Text("Lljdflkds");
-                if (element.blockName == Block_Name.Image_Banner_Slider_Block.name) {
-                  return 
-                  // Text("Lljdflkds"
-                  ItgeekWidgetSlider(element.imageBannerSliderData!,
+                  children: model.builderJsonTheme1!.map((element) {
+                Text("Lljdflkds");
+                if (element.blockName ==
+                    Block_Name.Image_Banner_Slider_Block.name) {
+                  return ItgeekWidgetSlider(element.imageBannerSliderData!,
                       (item) {
                     (element.imageBannerSliderData);
                     print("itemSliders $item");
@@ -85,9 +84,24 @@ class CustomePageFromJson {
                     // } else {
                     //   print("Slider Type Normal");
                     // }
-                  }
-                  );
+                  });
                 }
+                if (element.blockName == Block_Name.Image_Banner_Block.name) {
+                  return ItgeekWidgetBannerImage(element.imageWithTextData!,
+                      (item) {
+                    (element.imageWithTextData);
+                    print("itemImageView $item");
+                  });
+                }
+        if (element.blockName == Block_Name.Video_Block.name) {
+          return ItgeekWidgetBannerVideo(element.videoData!, (item) {
+            (element.videoData);
+            print("itemVideoView $item");
+          });
+        }
+        if (element.blockName == Block_Name.Collection_Grid_Block.name) {
+          return BestCategorys(element.collectionGridData!);
+        }
                 /*
         if (element.view == Block_Name.Scrolling_Text_Block.name) {
           print("mywebbb");
@@ -197,14 +211,12 @@ class CustomePageFromJson {
 */
                 return SizedBox.shrink();
               }).toList()),
-            );  
-            
+            );
           } else if (snapshot.hasError) {
             return Text('Error loading JSON'); // Handle error
           } else {
             return CircularProgressIndicator(); // Show a loading indicator
           }
         });
-
   }
 }

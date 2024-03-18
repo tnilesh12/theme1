@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:theme1/helper/util.dart';
+import 'package:theme1/utils/util.dart';
 import 'package:theme1/theme/app_theme.dart';
 // import 'package:builder_testing/helper/util.dart';
 // import 'package:shopifyappbuilder/modelClass/app_theme_model.dart';

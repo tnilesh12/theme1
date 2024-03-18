@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:theme1/helper/dialogs.dart';
-import 'package:theme1/helper/loading_dialog.dart';
+import 'package:theme1/utils/dialogs.dart';
+import 'package:theme1/utils/loading_dialog.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 // import '../../theme/app_colors.dart';
 import '../../theme/app_theme.dart';

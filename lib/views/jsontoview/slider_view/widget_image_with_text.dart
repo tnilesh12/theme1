@@ -4,6 +4,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:theme1/modelClass/data_model.dart';
 import 'package:theme1/theme/app_theme.dart';
+import 'package:theme1/views/product_details_screen/widgets/widget_image.dart';
 
 class WidgetImageWithTextBtn extends StatelessWidget {
   ImageBanner imageBanner;
@@ -36,19 +37,20 @@ class WidgetImageWithTextBtn extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Container(
-                // height: 200,
-                // width: double.infinity,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(8.0),
-                ),
-                // child: Expanded(
-                child: Image.network(
-                  imageBanner.imageSrc!,
-                  fit: BoxFit.cover,
-                  // ),
-                ),
-              ),
+              WidgetImage(imageBanner.imageSrc!),
+              // Container(
+              //   // height: 200,
+              //   // width: double.infinity,
+              //   decoration: BoxDecoration(
+              //     borderRadius: BorderRadius.circular(8.0),
+              //   ),
+              //   // child: Expanded(
+              //   child: Image.network(
+              //     imageBanner.imageSrc!,
+              //     fit: BoxFit.cover,
+              //     // ),
+              //   ),
+              // ),
               imageBanner.heading != ""
                   ? Padding(
                       padding: EdgeInsets.fromLTRB(8, 10, 8, 2),

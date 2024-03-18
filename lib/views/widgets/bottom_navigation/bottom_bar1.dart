@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:theme1/helper/util.dart';
+import 'package:theme1/utils/util.dart';
 import 'package:theme1/modelClass/BottomBarModel.dart';
 import 'package:theme1/modelClass/app_theme_model.dart';
 import 'package:theme1/theme/app_theme.dart';

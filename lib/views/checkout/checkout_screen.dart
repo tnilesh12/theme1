@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:theme1/helper/dialogs.dart';
+import 'package:theme1/utils/dialogs.dart';
 import 'package:theme1/theme/custom_text_theme.dart';
 import 'package:theme1/theme/my_text_style.dart';
 import 'package:theme1/views/widgets/common/custom_button.dart';
